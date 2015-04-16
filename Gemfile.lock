@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/brenthaas/tic_tac_toe
-  revision: 2081e9594c8c6f9bedb8f5367954b0b2e35d720a
+  revision: f2fafe002a6d2c00dd76714d173d0a2aa1a8f8ee
   specs:
     tic_tac_toe (0.1.0)
 
