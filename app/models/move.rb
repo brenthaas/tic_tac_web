@@ -1,6 +1,9 @@
 class Move < ActiveRecord::Base
   belongs_to :game
 
-  validates :player, inclusion: { in: TicTacToe::Game::PLAYERS }
-  validates :location, inclusion: { in: TicTacToe::Board::LOCATIONS }
+  validates :game, presence: true
+  validates :player, inclusion: { in: TicTacToe::Game::PLAYERS }, presence: true
+  validates :location, presence: true,
+                       inclusion: { in: TicTacToe::Board::LOCATIONS },
+                       uniqueness: { scope: [:player, :game_id] }
 end

@@ -38,6 +38,7 @@ gem 'pry-rails'
 # gem 'capistrano-rails', group: :development
 group :test do
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
