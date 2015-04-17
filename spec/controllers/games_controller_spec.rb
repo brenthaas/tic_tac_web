@@ -17,7 +17,7 @@ describe GamesController do
 
     it "assigns the requested game" do
       get :show, id: game.id
-      expect(assigns(:game)).to eq(game)
+      expect(assigns(:board)).to eq(game.board)
     end
   end
 end

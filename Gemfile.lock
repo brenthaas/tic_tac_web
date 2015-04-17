@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/brenthaas/tic_tac_toe
-  revision: 34e8e89b29868c9d686bc9e4f5f1e9d53320b9f2
+  revision: 90ff626d625ba61604e1871240f2f4d406f9347a
   specs:
-    tic_tac_toe (0.2.0)
+    tic_tac_toe (0.2.2)
 
 GEM
   remote: https://rubygems.org/

@@ -1,3 +1,29 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ttt-game {
+  .header {
+    text-align: center;
+  }
+}
+
+.ttt-board {
+  margin: auto;
+
+  table {
+    table-padding: 0px;
+  }
+
+  td {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  td.winning-square {
+    background-color: lightgreen;
+  }
+}
