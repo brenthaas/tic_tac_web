@@ -1,0 +1,13 @@
+<div class="ttt-game-list">
+  <div class="header"> <h1>Last <%= @games.count %> TicTacToe Games</h1> </div>
+  <% @games.reverse.each do |game| %>
+    <div class="game-link">
+      <%= link_to "Game ##{game.id}", game %>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <div class="game-link">
+    <%= link_to "Start New Game", {:action => :create}, :method => :post %>
+  </div>
+</div>
