@@ -2,10 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.ttt-game {
-  .header {
+.header {
+  text-align: center;
+}
+
+.ttt-game-list {
+  .game-link {
     text-align: center;
+    font-size: 3em;
+    padding: 5px;
   }
+}
+
+.go-back {
+  text-align: center;
+}
+
+.error-message {
+  text-align: center;
+  color: darkred;
 }
 
 .ttt-board {
@@ -21,6 +36,11 @@
     height: 60px;
     font-size: 50px;
     text-align: center;
+    .square-content {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   td.winning-square {

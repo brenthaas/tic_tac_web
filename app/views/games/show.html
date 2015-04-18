@@ -2,20 +2,28 @@
   <div class='header'>
     <h1>Tic-Tac-Toe Game #<%= params[:id] %></h1>
   </div>
+  <% if flash[:error].present? %>
+  <div class="error-message">
+    <p><%= flash[:error] %></p>
+  </div>
+  <% end %>
   <table class="ttt-board">
     <tr>
-      <td id="A1" <%= "class=winning-square" if @board['A1'].winner%>><%= @board['A1'] %></td>
-      <td id="A2" <%= "class=winning-square" if @board['A2'].winner%>><%= @board['A2'] %></td>
-      <td id="A3" <%= "class=winning-square" if @board['A3'].winner%>><%= @board['A3'] %></td>
+      <%= render partial: 'square', locals: {loc: 'A1'} %>
+      <%= render partial: 'square', locals: {loc: 'A2'} %>
+      <%= render partial: 'square', locals: {loc: 'A3'} %>
     </tr>
     <tr>
-      <td id="B1" <%= "class=winning-square" if @board['B1'].winner%>><%= @board['B1'] %></td>
-      <td id="B2" <%= "class=winning-square" if @board['B2'].winner%>><%= @board['B2'] %></td>
-      <td id="B3" <%= "class=winning-square" if @board['B3'].winner%>><%= @board['B3'] %></td>
+      <%= render partial: 'square', locals: {loc: 'B1'} %>
+      <%= render partial: 'square', locals: {loc: 'B2'} %>
+      <%= render partial: 'square', locals: {loc: 'B3'} %>
     </tr>
     <tr>
-      <td id="C1" <%= "class=winning-square" if @board['C1'].winner%>><%= @board['C1'] %></td>
-      <td id="C2" <%= "class=winning-square" if @board['C2'].winner%>><%= @board['C2'] %></td>
-      <td id="C3" <%= "class=winning-square" if @board['C3'].winner%>><%= @board['C3'] %></td>
+      <%= render partial: 'square', locals: {loc: 'C1'} %>
+      <%= render partial: 'square', locals: {loc: 'C2'} %>
+      <%= render partial: 'square', locals: {loc: 'C3'} %>
     </tr>
+</div>
+<div class="go-back">
+  <%= link_to "Back to Game List", games_path %>
 </div>
