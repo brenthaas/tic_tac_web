@@ -20,4 +20,22 @@ describe GamesController do
       expect(assigns(:board)).to eq(game.board)
     end
   end
+
+  describe "#make_move" do
+    def do_put
+      put :make_move, id: game.id, player: player, location: location
+    end
+
+    let(:player) { 'X' }
+    let(:location) { 'B2' }
+
+    it "makes a move" do
+      expect{ do_put }.to change(game.moves, :count).by(1)
+    end
+
+    it "sets a flash error message" do
+      2.times { do_put }
+      expect(flash[:error]).to be_present
+    end
+  end
 end
