@@ -1,4 +1,4 @@
-$('td.square a').click(click_on_square);
+$('.ttt-board').on('click', 'a', click_on_square);
 
 function click_on_square(event) {
   event.preventDefault();
@@ -24,17 +24,17 @@ function click_on_square(event) {
 }
 
 function error_message(msg) {
-  $('.error-message')[0].innerHTML=msg;
+  $('.error-message').html(msg);
 }
 
 function fill_location(location, player) {
-  $('#' + location + ' a')[0].innerHTML = player;
+  $('#' + location + ' a').html(player);
 }
 
 function color_won_squares(squares) {
-  for (square of squares) {
-    document.getElementById(square).style.backgroundColor = 'lightgreen';
-  }
+  $.each(squares, function(index, square) {
+    $("#" + square).css("backgroundColor", "lightgreen");
+  });
 }
 
 function mark_winning_squares() {
