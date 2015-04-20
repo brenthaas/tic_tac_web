@@ -2,27 +2,30 @@
   <div class='header'>
     <h1>Tic-Tac-Toe Game #<%= params[:id] %></h1>
   </div>
-  <% if flash[:error].present? %>
   <div class="error-message">
-    <p><%= flash[:error] %></p>
+    <% if flash[:error].present? %>
+      <p><%= flash[:error] %></p>
+    <% end %>
   </div>
-  <% end %>
   <table class="ttt-board">
-    <tr>
-      <%= render partial: 'square', locals: {loc: 'A1'} %>
-      <%= render partial: 'square', locals: {loc: 'A2'} %>
-      <%= render partial: 'square', locals: {loc: 'A3'} %>
-    </tr>
-    <tr>
-      <%= render partial: 'square', locals: {loc: 'B1'} %>
-      <%= render partial: 'square', locals: {loc: 'B2'} %>
-      <%= render partial: 'square', locals: {loc: 'B3'} %>
-    </tr>
-    <tr>
-      <%= render partial: 'square', locals: {loc: 'C1'} %>
-      <%= render partial: 'square', locals: {loc: 'C2'} %>
-      <%= render partial: 'square', locals: {loc: 'C3'} %>
-    </tr>
+    <tbody>
+      <tr>
+        <%= render partial: 'square', locals: {loc: 'A1'} %>
+        <%= render partial: 'square', locals: {loc: 'A2'} %>
+        <%= render partial: 'square', locals: {loc: 'A3'} %>
+      </tr>
+      <tr>
+        <%= render partial: 'square', locals: {loc: 'B1'} %>
+        <%= render partial: 'square', locals: {loc: 'B2'} %>
+        <%= render partial: 'square', locals: {loc: 'B3'} %>
+      </tr>
+      <tr>
+        <%= render partial: 'square', locals: {loc: 'C1'} %>
+        <%= render partial: 'square', locals: {loc: 'C2'} %>
+        <%= render partial: 'square', locals: {loc: 'C3'} %>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="go-back">
   <%= link_to "Back to Game List", games_path %>

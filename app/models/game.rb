@@ -15,6 +15,14 @@ class Game < ActiveRecord::Base
     game.board
   end
 
+  def won?
+    game.won?
+  end
+
+  def paths_won
+    game.paths_won
+  end
+
   private
 
   def game
