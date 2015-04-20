@@ -1,3 +1,6 @@
+
 <td id=<%= loc %> class="square <%= 'winning-square' if @board[loc].winner%>">
-  <div class="square-content"><%= @board[loc] %></div>
+  <%= link_to make_move_game_path(location: loc), method: :put do %>
+    <%= @board[loc] %>
+  <% end %>
 </td>
